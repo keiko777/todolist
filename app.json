@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/me/me",
+    "pages/event/event",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#033D8D",
+    "navigationBarTitleText": "todolist",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "backgroundColor":"#FCFCFC",
+    "color": "#a9b7b7",
+    "selectedColor": "#033D8D",
+    "borderStyle": "none",
+    "list": [
+      {
+        "selectedIconPath": "images/hindex.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/hme.png",
+        "iconPath": "images/me.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <button class="add" bindtap="powerDrawer" data-statu="open">+</button>
+    <!--监听button点击事件-->
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  
+  <!--drawer content-->  
+  <view class="drawer_title">添加一个todo</view>  
+  <view class="drawer_content">  
+    <view class="top grid">  
+      <label class="title col-0">事项:</label>  
+      <input class="input_base input_h30 col-1" name="rName" placeholder="跑步" bindinput ="getUserEvent"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">时间:</label>  
+      <input class="input_base input_h30 col-1" name="mobile" placeholder="10" bindinput ="getUserTime"></input>  
+    </view>  
+    <view class="top grid">  
+      <picker bindchange="bindPickerChange" value="{{areaIndex}}" range="{{area}}">  
+        <view class="picker">  
+          <label class="title col-0">当前选择：</label> 
+          <span class="picker_select">{{area[areaIndex]}}</span>
+        </view> 
+      </picker>  
+      </view> 
+      <view class="errod">{{tip}}</view>
+  </view>  
+  <view class="btn_ok" bindtap="submit" data-statu="close">确定</view>  
+</view>  
+</view>
+</view>
